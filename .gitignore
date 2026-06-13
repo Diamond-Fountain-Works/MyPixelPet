@@ -1,0 +1,8 @@
+.DS_Store
+DerivedData/
+build/
+.build/
+.swiftpm/
+*.xcuserstate
+**/xcuserdata/
+temp_pages_extract/
