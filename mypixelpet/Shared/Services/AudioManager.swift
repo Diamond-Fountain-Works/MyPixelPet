@@ -6,6 +6,9 @@ class AudioManager {
     private var audioPlayers: [String: AVAudioPlayer] = [:]
 
     private init() {
+#if os(macOS)
+        // macOS does not use AVAudioSession; AVAudioPlayer can play bundled sounds directly.
+#else
         // Prepare shared audio session
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
@@ -13,6 +16,7 @@ class AudioManager {
         } catch {
             print("Failed to set up audio session: \(error)")
         }
+#endif
     }
 
     /// Plays a sound file from the Shared resources hierarchy.

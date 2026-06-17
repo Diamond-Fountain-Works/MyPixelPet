@@ -1,6 +1,9 @@
 import Foundation
-import CoreMotion
+import Observation
 import SwiftUI
+
+#if os(iOS)
+import CoreMotion
 
 @Observable
 class MotionManager {
@@ -85,3 +88,15 @@ class MotionManager {
         }
     }
 }
+#else
+@Observable
+class MotionManager {
+    static let shared = MotionManager()
+
+    private init() {}
+
+    func startAccelerometerUpdates() {
+        // Motion gestures are only available on iOS hardware.
+    }
+}
+#endif
