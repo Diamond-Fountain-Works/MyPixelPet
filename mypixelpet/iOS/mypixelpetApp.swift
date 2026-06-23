@@ -17,7 +17,7 @@ struct mypixelpetApp: App {
     @State private var desktopPet = DesktopPetAppModel.shared
 
     var body: some Scene {
-        MenuBarExtra("MyPixelPet", systemImage: "pawprint.fill") {
+        MenuBarExtra("MyPixelPet", image: "MenuBarLogo") {
             DesktopPetMenuView(model: desktopPet)
         }
         .menuBarExtraStyle(.menu)

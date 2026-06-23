@@ -6,3 +6,4 @@ build/
 *.xcuserstate
 **/xcuserdata/
 temp_pages_extract/
+dist/
