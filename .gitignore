@@ -7,3 +7,6 @@ build/
 **/xcuserdata/
 temp_pages_extract/
 dist/
+
+# Local-only product planning manual. Do not upload to GitHub.
+LOCAL_PRODUCT_PLAN.md
